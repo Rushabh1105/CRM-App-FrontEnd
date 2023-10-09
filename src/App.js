@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Entry from './Page/Entry/Entry.Page';
 import DefaultLayout from './Layout/DefaultLayout';
-import Dashboard from './Page/Dashboard/Dashboard.Page';
+// import Dashboard from './Page/Dashboard/Dashboard.Page';
 import AddTicket from "./Page/NewTicket/AddTicket.Page";
 
 function App() {
