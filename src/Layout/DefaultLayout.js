@@ -6,7 +6,7 @@ function DefaultLayout( {children }) {
   return (
     <div>
         <div className='default-layout' >
-            <header className='header'>
+            <header className='header mb-3'>
                 <Header />
             </header>
 
