@@ -4,11 +4,22 @@ import BreadCrumb from '../../Component/BreadCrumb.Component.js/BreadCrumb';
 import tickets from '../../Assets/DummyTicket.json';
 import MessageHistory from '../../Component/MessageHistory/MessageHistory.Component';
 import UpdateTicket from '../../Component/UpdateTicket/UpdateTicket.Component';
+import { useParams } from 'react-router-dom';
 
 function Ticket() {
 
+    const {tId} = useParams();
+
     const [message, setMessage] = useState('');
-    useEffect( ()=>{}, [message])
+    const [ticket, setTicket] = useState("")
+    useEffect( ()=>{
+        for (let index = 0; index < tickets.length; index++) {
+            if(tickets[index].id == tId ){
+                setTicket(tickets[index]);
+                continue;
+            }
+        }
+    }, [message, tId])
 
     const handleOnChange = (e) => {
         setMessage(e.target.value);
@@ -18,7 +29,7 @@ function Ticket() {
         alert('Please enter')
     }
 
-    const ticket = tickets[0];
+    // const ticket = tickets[0];
   return (
     <Container>
         <Row>
@@ -47,7 +58,9 @@ function Ticket() {
 
         <Row className='mt-4'>
             <Col>
-                <MessageHistory msg={ticket.history}/>
+                {
+                    ticket.history && <MessageHistory msg={ticket.history}/>
+                }
             </Col>
         </Row>
         <hr/>

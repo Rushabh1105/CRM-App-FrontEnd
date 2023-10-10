@@ -4,6 +4,8 @@ import BreadCrumb from '../../Component/BreadCrumb.Component.js/BreadCrumb'
 import SearchForm from '../../Component/SearchForm/SearchForm.Component';
 import TicketTable from '../../Component/Ticket-Table/TicketTable.Component';
 import tickets from '../../Assets/DummyTicket.json';
+import { Link } from 'react-router-dom';
+
 
 function TicketListing() {
 
@@ -40,7 +42,9 @@ function TicketListing() {
         </Row>
         <Row className='mt-5'>
             <Col>
-                <Button variant='info'> Add New Ticket </Button>
+                <Link to="/add-ticket">
+                    <Button variant='info'> Add New Ticket </Button>
+                </Link>
             </Col>
             <Col className='text-right'>
                 <SearchForm 
