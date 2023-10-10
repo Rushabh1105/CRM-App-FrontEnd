@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import TicketTable from '../../Component/Ticket-Table/TicketTable.Component';
 import BreadCrumb from '../../Component/BreadCrumb.Component.js/BreadCrumb';
+import tickets from '../../Assets/DummyTicket.json'
 
 function Dashboard() {
   return (
@@ -46,7 +47,7 @@ function Dashboard() {
 
         <Row>
             <Col className='recent-ticket'>
-                <TicketTable />
+                <TicketTable tickets={tickets}/>
             </Col>
         </Row>
     </Container>
